@@ -1,0 +1,389 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/Robojini/Tuturial_UI_Library/main/UI_Template_1"))()
+
+local Window = Library.CreateLib("Daw Hub | Zone 51", "RJTheme3")
+
+local Tab = Window:NewTab("Главная страница")
+
+local Section = Tab:NewSection("Управление игрой")
+
+-- Кнопка ESP
+Section:NewButton("Включить ESP Зомби", "Включает подсветку зомби в игре.", function()
+    while wait(0.5) do
+        for i, childrik in ipairs(workspace:GetDescendants()) do
+            if childrik:FindFirstChild("Zombie") then
+                if not childrik:FindFirstChild("EspBox") then
+                    if childrik ~= game.Players.LocalPlayer.Character then
+                        local esp = Instance.new("BoxHandleAdornment",childrik)
+                        esp.Adornee = childrik
+                        esp.ZIndex = 0
+                        esp.Size = Vector3.new(4, 5, 1)
+                        esp.Transparency = 0.65
+                        esp.Color3 = Color3.fromRGB(57, 116, 159)
+                        esp.AlwaysOnTop = true
+                        esp.Name = "EspBox"
+                    end
+                end
+            end
+        end
+    end
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Cейв Зона", "Телепортирует игрока в Сейв Зону.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(21.544845581054688, 294.1424865722656, 241.0670928955078)
+end)
+
+
+
+local Tab = Window:NewTab("Мир")
+
+local Section = Tab:NewSection("Управление миром")
+
+-- Кнопка Контр Делит
+Section:NewButton("Включить Контр Делит", "Включает комбинацию Ctrl + LCM которая удаляет объекты.)", function()
+    local Plr = game:GetService("Players").LocalPlayer
+local Mouse = Plr:GetMouse()
+ 
+Mouse.Button1Down:connect(function()
+if not game:GetService("UserInputService"):IsKeyDown(Enum.KeyCode.LeftControl) then return end
+if not Mouse.Target then return end
+Mouse.Target:Destroy()
+end)
+end)
+
+
+
+local Tab = Window:NewTab("Телепорт")
+
+local Section = Tab:NewSection("Управление телепортами")
+
+-- Подсекция
+local Section = Tab:NewSection("Телепорты по карте")
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Спавн", "Телепортирует игрока на Спавн.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(322.9073791503906, 315.1981201171875, 370.37054443359375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Лифт", "Телепортирует игрока на Лифт.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(281.3597717285156, 314.4332275390625, 350.2951965332031)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Лифт Джейсон", "Телепортирует игрока на Лифт.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(235.6988525390625, 314.0184326171875, 293.5093078613281)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Лифт Джейсон 2", "Телепортирует игрока на Лифт Джейсон 2.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(223.20001220703125, 315.5, 39.399993896484375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Канализация", "Телепортирует игрока в канализацию.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(172.70034790039062, 269.7003479003906, 294.9004211425781)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Подвал Спавн", "Телепортирует игрока в подвал по спавном.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(210.6376495361328, 257.97418212890625, 375.8603210449219)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Туалет", "Телепортирует игрока в туалетную локкацию.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(51.90650939941406, 324.1977844238281, 672.2996215820312)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Кухня", "Телепортирует игрока на Кухню .)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(200.28953552246094, 335.7555847167969, 627.6400146484375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ворота", "Телепортирует игрока в к воротам.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(64.83537292480469, 323.7868957519531, 505.8668518066406)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Лаборатория", "Телепортирует игрока в Лабораторию.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-45.99428176879883, 302.999755859375, 600.4865112304688)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Staff Only", "Телепортирует игрока в Staff Oly.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-90.62075805664062, 316.6175231933594, 454.27154541015625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Bug 1", "Телепортирует игрока в Bug 1.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-51.446075439453125, 314.255126953125, 290.0287170410156)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Bug 2", "Телепортирует игрока в Bug 2.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(106.81107330322266, 315.2842102050781, 356.5867004394531)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Armory", "Телепортирует игрока в Armory.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-125.01103210449219, 315.4634094238281, 281.6280212402344)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Office", "Телепортирует игрока в Office.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-13.167451858520508, 293.313720703125, 288.1634216308594)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Броня", "Телепортирует игрока к Броне.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-162.7926788330078, 292.80029296875, 314.70989990234375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Грэнни", "Телепортирует игрока к Грэнни.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(108.66820526123047, 313.5, 59.0112190246582)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт RadioZone", "Телепортирует игрока в RadioZone.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(162.9773406982422, 346.2628173828125, 504.8282470703125)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Тюрьма", "Телепортирует игрока в Тюрьму.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(91.99766540527344, 294.8393249511719, 241.33590698242188)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Lab Rake", "Телепортирует игрока в Lab Rake.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(177.8074493408203, 315.558837890625, 321.0961608886719)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Кухня 2", "Телепортирует игрока в Кухню 2.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(290.37847900390625, 313.87994384765625, 275.45684814453125)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Шлюз", "Телепортирует игрока в Шлюз.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-6.168869495391846, 284.7209167480469, 136.6968536376953)
+end)
+
+
+
+-- Подсекция
+local Section = Tab:NewSection("Телепорт Box + Baff")
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Напиток возраждение", "Телепортирует игрока на к напитку.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(183.70509338378906, 318.0469055175781, 418.8466491699219)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Машина Улучшения", "Телепортирует игрока к Машина Улучшения.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(275.699951171875, 324.6710510253906, 772.3222045898438)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Напиток Джаггера", "Телепортирует игрока к Джаггер бафф.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(117.49757385253906, 324.236328125, 694.307861328125)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Электричество", "Телепортирует игрока к ЭлектроБлоку.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(129.46324157714844, 323, 598.4675903320312)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Бафф 1", "Телепортирует игрока к Бафф 1.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(297.0355224609375, 313.13189697265625, 290.80072021484375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Бафф 2", "Телепортирует игрока к Бафф 2.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(144.18104553222656, 262.9002990722656, 375.75885009765625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Бафф 3", "Телепортирует игрока к Бафф 3.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(112.0648193359375, 272.8943176269531, 176.6415252685547)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Бафф 4", "Телепортирует игрока к Бафф 4.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-132.07127380371094, 296.84320068359375, 352.87847900390625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 1", "Телепортирует игрока к Ганбоксу 1.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(106.02686309814453, 313.78759765625, 353.5320129394531)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 2", "Телепортирует игрока к Ганбоксу 2.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(149.9434356689453, 260.13720703125, 318.8746643066406)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 3", "Телепортирует игрока к Ганбоксу 3.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(178.43795776367188, 334.4211120605469, 623.552978515625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 4", "Телепортирует игрока к Ганбоксу 4.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(79.7761459350586, 314.5, 628.3109130859375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 5", "Телепортирует игрока к Ганбоксу 5.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-146.82421875, 294.00030517578125, 314.4888610839844)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 6", "Телепортирует игрока к Ганбоксу 6.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(15.261123657226562, 284.20001220703125, 145.74632263183594)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 7", "Телепортирует игрока к Ганбоксу 7.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-146.6712646484375, 303.999755859375, 766.7341918945312)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Ганбокс 8", "Телепортирует игрока к Ганбоксу 8.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(150.0904998779297, 260.0872802734375, 317.86761474609375)
+end)
+
+
+
+-- Подсекция
+local Section = Tab:NewSection("Телепорты Guns")
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт MG42", "Телепортирует игрока к MG42.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(25.51028823852539, 314.6025390625, 370.9596862792969)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Desert Eagle", "Телепортирует игрока к Desert Eagle.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(180.69033813476562, 259.2002868652344, 408.141357421875)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт DB Shotgun", "Телепортирует игрока к DB Shotgun.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(108.21466064453125, 278.7492980957031, 98.5254898071289)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Energy", "Телепортирует игрока к Energy.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(175.3697967529297, 333.69256591796875, 585.8571166992188)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт M14", "Телепортирует игрока к M14.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(181.9981689453125, 315.7933654785156, 374.4962463378906)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Landmine", "Телепортирует игрока к Landmine.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(242.1745147705078, 314.5569763183594, 337.5420837402344)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт FreezeGun", "Телепортирует игрока к FreezeGun.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(298.6015930175781, 314.1988830566406, 274.4582824707031)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт M4A1", "Телепортирует игрока к M4A1.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-150.3143310546875, 304.3117370605469, 701.97314453125)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт M1911", "Телепортирует игрока к M1911.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(337.54852294921875, 314.2917175292969, 371.80322265625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт M16A2/M203", "Телепортирует игрока к M16A2/M203.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(72.87076568603516, 283.1949768066406, 34.373104095458984)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт SVD", "Телепортирует игрока к SVD.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(160.05711364746094, 333.93048095703125, 447.4376220703125)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт RayGun", "Телепортирует игрока к RayGun.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(112.98348999023438, 338.8471984863281, 562.1028442382812)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт R870", "Телепортирует игрока к R870.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(21.544845581054688, 294.1424865722656, 241.0670928955078)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт MP5k", "Телепортирует игрока к MP5k.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(221.70001220703125, 375.5, 33.399993896484375)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Card Rake", "Телепортирует игрока к Card Rake.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(97.66778564453125, 295.1711120605469, 254.734619140625)
+end)
+
+-- Кнопка Телепорт
+Section:NewButton("Телепорт Карта оружие", "Телепортирует игрока к Карте от оружия.)", function()
+    game.Players.LocalPlayer.Character.Humanoid.RootPart.CFrame = CFrame.new(-2.9118945598602295, 297.3474426269531, 288.2663879394531)
+end)
+
+
+
+local Tab = Window:NewTab("Игрок")
+
+local Section = Tab:NewSection("Управление игроком")
+
+-- Сила прыжка
+Section:NewSlider("Силы прыжка", "Изменяет Силу прыжка игрока.", 300, 20, function(s) -- 300 (Максимальное значение) | 20 (Минимальное значение)
+    game.Players.LocalPlayer.Character.Humanoid.JumpPower = s
+end)
+
+-- Cкорость
+Section:NewSlider("Скорость", "Изменяет скорорость игрока.", 50, 10, function(s) -- 50 (Максимальное значение) | 10 (Минимальное значение)
+    game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = s
+end)
+
+
+
+
+local Tab = Window:NewTab("Hubs")
+
+-- Подсекция
+local Section = Tab:NewSection("Scripts")
+
+-- Infiniteyield
+Section:NewLabel("Админ панель | Infiniteyield")
+
+-- Кнопка Infiniteyield
+Section:NewButton("Infiniteyield", "Открывает панель Infiniteyield.", function()
+    loadstring(game:HttpGet(('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'),true))()
+end)
+
+-- Sinret
+Section:NewLabel("Sinret Hub | Sinret")
+
+-- Кнопка sinret
+Section:NewButton("Sinret Hub", "Открывает панель Sinret.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/sinret/rbxscript.com-scripts-reuploads-/main/univ6", true))()
+end)
+
+-- SkyHub
+Section:NewLabel("SkyHub| SkyHub")
+
+-- Кнопка SkyHub
+Section:NewButton("SkyHub", "Открывает панель SkyHub.", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/yofriendfromschool1/Sky-Hub/main/SkyHub.txt"))() 
+end)
